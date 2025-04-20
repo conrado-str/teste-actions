@@ -65,5 +65,5 @@ docker run -d -p 1521:1521 -e ORACLE_PASSWORD=oracle gvenzl/oracle-xe
 
 ./mvnw spring-boot:run
 
-
+> 🔁 Teste automatizado do pipeline CI/CD via GitHub Actions.
 
