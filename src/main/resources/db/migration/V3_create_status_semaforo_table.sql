@@ -1,0 +1,22 @@
+BEGIN
+    EXECUTE IMMEDIATE '
+        CREATE TABLE status_semaforo (
+            id NUMBER PRIMARY KEY,
+            status VARCHAR2(50) NOT NULL
+        )
+    ';
+EXCEPTION
+    WHEN OTHERS THEN
+        IF SQLCODE != -955 THEN RAISE; END IF;
+END;
+/
+
+BEGIN
+    EXECUTE IMMEDIATE '
+        CREATE SEQUENCE seq_status_semaforo START WITH 1 INCREMENT BY 1
+    ';
+EXCEPTION
+    WHEN OTHERS THEN
+        IF SQLCODE != -955 THEN RAISE; END IF;
+END;
+/

@@ -1,0 +1,23 @@
+BEGIN
+    EXECUTE IMMEDIATE '
+        CREATE TABLE cruzamento (
+            id NUMBER PRIMARY KEY,
+            nome VARCHAR2(100) NOT NULL,
+            localizacao VARCHAR2(200)
+        )
+    ';
+EXCEPTION
+    WHEN OTHERS THEN
+        IF SQLCODE != -955 THEN RAISE; END IF;
+END;
+/
+
+BEGIN
+    EXECUTE IMMEDIATE '
+        CREATE SEQUENCE seq_cruzamento START WITH 1 INCREMENT BY 1
+    ';
+EXCEPTION
+    WHEN OTHERS THEN
+        IF SQLCODE != -955 THEN RAISE; END IF;
+END;
+/
