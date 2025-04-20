@@ -36,7 +36,3 @@ jobs:
       - name: Gerar artefato
         run: ./mvnw package -DskipTests
 
-      - name: Upload do JAR como artefato
-        with:
-          name: semaforos-jar
-          path: target/*.jar
